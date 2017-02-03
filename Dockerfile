@@ -1,7 +1,7 @@
 FROM postgres:9.5
 
 RUN apt-get update && apt-get -y install \
-           build-essential git libicu-dev \
+           build-essential git libicu52 libicu-dev \
            postgresql-server-dev-$PG_MAJOR=$PG_VERSION
 
 RUN mkdir -p /usr/src/musicbrainz-unaccent \
