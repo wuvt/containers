@@ -8,31 +8,33 @@ RUN sed -i 's/$/ non-free/g' /etc/apt/sources.list \
             curl festival openssl build-essential autoconf bzip2 \
             m4 perl pkg-config sed sox sudo \
             ocaml-base-nox \
-            libalsa-ocaml-dev \
+            ladspa-sdk \
+            libasound2-dev \
             libbiniou-ocaml-dev \
             libcamomile-ocaml-dev \
             libduppy-ocaml-dev \
             libeasy-format-ocaml-dev \
+            libfaad-dev \
             libfdk-aac-dev \
-            libflac-ocaml-dev \
+            libflac-dev \
             libinotify-ocaml-dev \
-            libladspa-ocaml-dev \
-            liblo-ocaml-dev \
-            libmad-ocaml-dev \
+            liblo-dev \
+            libmad0-dev \
             libmagic-ocaml-dev \
-            libmm-ocaml-dev \
-            libmp3lame-ocaml-dev \
-            libogg-ocaml-dev \
-            libopus-ocaml-dev \
+            libmm-dev \
+            libmp3lame-dev \
+            libogg-dev \
+            libopus-dev \
             libpcre-ocaml-dev \
-            libpulse-ocaml-dev \
-            libsamplerate-ocaml-dev \
-            libsoundtouch-ocaml-dev \
-            libspeex-ocaml-dev \
+            libpulse-dev \
+            libsamplerate-dev \
+            libsoundtouch-dev \
+            libspeex-dev \
+            libssl-ocaml-dev \
             libswscale-dev \
             libsyslog-ocaml-dev \
-            libtaglib-ocaml-dev \
-            libvorbis-ocaml-dev \
+            libtag1-dev \
+            libvorbis-dev \
             libxmlm-ocaml-dev \
             libyojson-ocaml-dev \
         && rm -rf /var/lib/apt/lists/*
