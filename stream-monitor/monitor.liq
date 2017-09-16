@@ -1,0 +1,12 @@
+set("log.file.path", "/dev/null")
+set("log.stdout", true)
+
+def blank_detected() =
+    log("Stream silence detected")
+    _ = get_process_lines("/data/silence.sh")
+end
+
+source = mksafe(input.https("http://stream.wuvt.vt.edu:443/wuvt.ogg"))
+
+output.dummy(
+    on_blank(max_blank=60.0, track_sensitive=false, blank_detected, source))
