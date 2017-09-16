@@ -1,13 +1,14 @@
-FROM debian:jessie-slim
+FROM debian:stretch-slim
 
-RUN apt-get update && apt-get install -y apt-transport-https
+RUN apt-get update && apt-get install -y apt-transport-https gnupg
 
 COPY elastic.asc /tmp/
 COPY beats.list /etc/apt/sources.list.d/
 
 RUN apt-key add /tmp/elastic.asc \
         && apt-get update \
-        && apt-get -y install filebeat
+        && apt-get -y install filebeat \
+        && rm -rf /var/lib/apt/lists/*
 
 VOLUME "/etc/filebeat"
 
