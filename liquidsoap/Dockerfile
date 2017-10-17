@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV LIQUIDSOAP_VERSION 1.3.2
+ENV LIQUIDSOAP_VERSION 1.3.3
 
 RUN sed -i 's/$/ non-free/g' /etc/apt/sources.list \
         && apt-get update \
