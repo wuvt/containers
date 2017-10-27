@@ -6,8 +6,10 @@ WORKDIR /usr/src/app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-VOLUME ["/data"]
+RUN groupadd -r -g 200 bot \
+        && useradd -mr -g bot -u 200 bot
+USER bot
 
-USER daemon
+VOLUME ["/home/bot/.phenny"]
 
-CMD ["/usr/src/app/phenny", "-c", "/data/default.py"]
+CMD ["/usr/src/app/phenny"]
