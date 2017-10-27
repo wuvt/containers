@@ -9,4 +9,4 @@ end
 source = mksafe(input.https("http://stream.wuvt.vt.edu:443/wuvt.ogg"))
 
 output.dummy(
-    on_blank(max_blank=60.0, threshold=-20.0, track_sensitive=false, blank_detected, source))
+    on_blank(max_blank=60.0, threshold=-30.0, track_sensitive=false, blank_detected, source))
