@@ -1,6 +1,6 @@
 FROM python:3
 
-RUN git clone https://github.com/mutantmonkey/phenny.git /usr/src/app
+RUN git clone https://github.com/wuvt/notecharlie.git /usr/src/app
 
 WORKDIR /usr/src/app
 
