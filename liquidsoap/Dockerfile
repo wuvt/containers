@@ -42,7 +42,7 @@ RUN sed -i 's/$/ non-free/g' /etc/apt/sources.list \
 RUN mkdir -p /usr/src/liquidsoap
 WORKDIR /usr/src/liquidsoap
 
-RUN curl --location -O https://github.com/savonet/liquidsoap/releases/download/${LIQUIDSOAP_VERSION}/liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.gz \
+RUN curl --location -O https://github.com/savonet/liquidsoap/releases/download/${LIQUIDSOAP_VERSION}/liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.bz2 \
         && tar -axvf liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.gz
 
 WORKDIR /usr/src/liquidsoap/liquidsoap-${LIQUIDSOAP_VERSION}-full
