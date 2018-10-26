@@ -1,5 +1,5 @@
 {
-  "template" : "syslog-*",
+  "index_patterns" : ["syslog-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

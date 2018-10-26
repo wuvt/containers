@@ -1,5 +1,5 @@
 {
-  "template" : "postfix-*",
+  "index_patterns" : ["postfix-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

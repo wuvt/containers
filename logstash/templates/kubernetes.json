@@ -1,5 +1,5 @@
 {
-  "template" : "kubernetes-*",
+  "index_patterns" : ["kubernetes-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

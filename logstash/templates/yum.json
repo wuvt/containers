@@ -1,5 +1,5 @@
 {
-  "template" : "yum-*",
+  "index_patterns" : ["yum-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

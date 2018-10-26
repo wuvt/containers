@@ -1,5 +1,5 @@
 {
-  "template" : "nginx-*",
+  "index_patterns" : ["nginx-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

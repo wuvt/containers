@@ -1,5 +1,5 @@
 {
-  "template" : "ntp-*",
+  "index_patterns" : ["ntp-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

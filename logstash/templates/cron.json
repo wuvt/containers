@@ -1,5 +1,5 @@
 {
-  "template" : "cron-*",
+  "index_patterns" : ["cron-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },

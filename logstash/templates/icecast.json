@@ -1,5 +1,5 @@
 {
-  "template" : "icecast-*",
+  "index_patterns" : ["icecast-*"],
   "settings" : {
     "index.refresh_interval" : "5s"
   },
