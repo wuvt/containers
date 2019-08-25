@@ -1,6 +1,6 @@
-FROM debian:stretch
+FROM debian:sid
 
-ENV LIQUIDSOAP_VERSION 1.3.3
+ENV LIQUIDSOAP_VERSION 1.3.7
 
 RUN sed -i 's/$/ non-free/g' /etc/apt/sources.list \
         && apt-get update \
@@ -42,7 +42,7 @@ RUN sed -i 's/$/ non-free/g' /etc/apt/sources.list \
 RUN mkdir -p /usr/src/liquidsoap
 WORKDIR /usr/src/liquidsoap
 
-RUN curl --location -O https://github.com/savonet/liquidsoap/releases/download/${LIQUIDSOAP_VERSION}/liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.bz2 \
+RUN curl --location -O https://github.com/savonet/liquidsoap/releases/download/${LIQUIDSOAP_VERSION}/liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.gz \
         && tar -axvf liquidsoap-${LIQUIDSOAP_VERSION}-full.tar.gz
 
 WORKDIR /usr/src/liquidsoap/liquidsoap-${LIQUIDSOAP_VERSION}-full
