@@ -2,7 +2,7 @@ name: Build cfssl Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "cfssl/*"
+      - "cfssl/**"
 
 jobs:
   build:

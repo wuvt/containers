@@ -2,7 +2,7 @@ name: Build elastalert Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "elastalert/*"
+      - "elastalert/**"
 
 jobs:
   build:

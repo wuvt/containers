@@ -2,7 +2,7 @@ name: Build nginx-kibana Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "nginx-kibana/*"
+      - "nginx-kibana/**"
 
 jobs:
   build:

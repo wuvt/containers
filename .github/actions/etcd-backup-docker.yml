@@ -2,7 +2,7 @@ name: Build etcd-backup Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "etcd-backup/*"
+      - "etcd-backup/**"
 
 jobs:
   build:

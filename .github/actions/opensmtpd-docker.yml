@@ -2,7 +2,7 @@ name: Build opensmtpd Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "opensmtpd/*"
+      - "opensmtpd/**"
 
 jobs:
   build:

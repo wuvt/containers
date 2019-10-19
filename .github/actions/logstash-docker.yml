@@ -2,7 +2,7 @@ name: Build logstash Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "logstash/*"
+      - "logstash/**"
 
 jobs:
   build:

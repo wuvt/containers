@@ -2,7 +2,7 @@ name: Build postgres Docker image and push to GitHub Package Registry
 on:
   push:
     paths:
-      - "postgres/*"
+      - "postgres/**"
 
 jobs:
   build:
