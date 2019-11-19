@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM alpine:edge
 
-ENV OPENSMTPD_VER=6.0.3p1-r3
+ENV OPENSMTPD_VER=6.6.1p1-r1
 RUN apk add --no-cache libressl "opensmtpd~${OPENSMTPD_VER}"
 
 VOLUME /var/spool/smtpd
