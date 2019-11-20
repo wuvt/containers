@@ -7,4 +7,4 @@ RUN apk add --no-cache libressl "opensmtpd~${OPENSMTPD_VER}" \
 WORKDIR /var/spool/smtpd
 EXPOSE 25
 
-CMD ["smtpd", "-dv"]
+CMD ["smtpd", "-d"]
