@@ -5,6 +5,6 @@ ENV FETCHMAIL_VERSION 6.3.26-r14
 
 RUN apk add --no-cache "fetchmail~${FETCHMAIL_VERSION}"
 
-USER nobody
+#USER nobody
 
 CMD ["/usr/bin/fetchmail", "--nodetach", "--nosyslog", "-f", "/etc/fetchmailrc"]
