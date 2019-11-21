@@ -7,4 +7,4 @@ RUN apk add --no-cache "fetchmail~${FETCHMAIL_VERSION}"
 
 USER nobody
 
-CMD ["/usr/bin/fetchmail", "-s", "-f", "/etc/fetchmailrc"]
+CMD ["/usr/bin/fetchmail", "--nodetach", "--nosyslog", "-f", "/etc/fetchmailrc"]
