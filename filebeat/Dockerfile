@@ -1,4 +1,5 @@
 FROM debian:stretch-slim
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 RUN apt-get update && apt-get install -y apt-transport-https gnupg
 

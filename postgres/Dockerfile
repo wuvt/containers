@@ -1,4 +1,5 @@
 FROM postgres:9.5
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 RUN apt-get update && apt-get -y install \
            build-essential git libicu52 libicu-dev \

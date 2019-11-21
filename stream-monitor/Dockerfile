@@ -1,4 +1,5 @@
 FROM quay.io/wuvt/liquidsoap:latest
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 USER root
 

@@ -1,4 +1,5 @@
 FROM debian:sid
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 ENV LIQUIDSOAP_VERSION 1.3.7
 

@@ -1,4 +1,5 @@
 FROM golang:1.9-alpine
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 RUN apk add --update curl && rm -rf /var/cache/apk/*
 
