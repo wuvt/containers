@@ -21,12 +21,27 @@ ocaml-cry
 # AO is portable and stable, but it does only output.
 #ocaml-ao
 
+# Portaudio is a portable audio library with both input and output.
+#ocaml-portaudio
+
 # ALSA is only for LINUX, and is sometimes not working.
 ocaml-alsa
 
-# PulseAudio is a cross-plateform audio sound server. It is intended to
+# PulseAudio is a cross-platform audio sound server. It is intended to
 # be a single replacement for sound support under linux, windows or OSX.
 ocaml-pulseaudio
+
+# JACK is an audio connection kit, designed for low latency
+# and easy communication between audio applications.
+#ocaml-bjack
+
+# Gstreamer is a library for constructing graphs of media-handling components.
+# It is currently used to provide audio and video encoding and decoding
+# as well as input and outputs such as V4l inputs.
+#ocaml-gstreamer
+
+# Srt enabled input and output using the Secure, Reliable, Transport protocol library.
+#ocaml-srt
 
 # ============================================================================
 # Codecs
@@ -40,6 +55,9 @@ ocaml-taglib
 
 # LAME is for MP3 encoding.
 ocaml-lame
+
+# SHINE is for fixed-point MP3 encoding.
+ocaml-shine
 
 # OGG is for ogg/vorbis and ogg/theora encoding and decoding
 ocaml-ogg
@@ -64,6 +82,9 @@ ocaml-opus
 # FDK-AAC is for AAC and AAC+ encoding
 ocaml-fdkaac
 
+# FAAD for AAC decoding.
+ocaml-faad
+
 # FLAC is for flac, native and/or ogg (if using ocaml-ogg)
 # format decoding and encoding.
 ocaml-flac
@@ -74,6 +95,8 @@ ocaml-flac
 
 # LADSPA are audio plugins providing sound effects
 ocaml-ladspa
+
+# Lilv intefaces LV2 plugins providing sound effects
 
 # SoundTouch is for changing pitch and tempo of sound
 ocaml-soundtouch
@@ -99,11 +122,22 @@ ocaml-samplerate
 #ocaml-frei0r
 
 # ============================================================================
+# Sound synthesis
+# ============================================================================
+
+# DSSI is a standard for synthesizer plugins
+#ocaml-dssi
+
+# ============================================================================
 # Various modules
 # ============================================================================
 
 # Xmlplaylist allow support for various xml format, such as rss, podcast, etc..
 ocaml-xmlplaylist
+
+# Lastfm allow support for lastfm radios and the audioscrobbler protocol
+# It should be listed *after* ocaml-xmlplaylist in this file
+ocaml-lastfm
 
 # A library supporting the OSC protocol to have external controls
 # such as faders
