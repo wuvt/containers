@@ -1,19 +1,31 @@
-name: Build liquidsoap Docker image and push to GitHub Package Registry
+name: Build and push liquidsoap Docker image
 on:
   push:
-    paths:
-      - "liquidsoap/**"
+    tags:
+      - liquidsoap-*
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Publish to GitHub Package Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - name: Get release version
+      id: get_version
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:20})
+    - name: Build and publish Docker image
+      uses: docker/build-push-action@v1
       with:
-        name: wuvt/containers/liquidsoap
-        username: wuvt
-        password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        workdir: liquidsoap
+        repository: wuvt/liquidsoap
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: latest,${{ env.RELEASE_VERSION }}
+        path: liquidsoap
+        add_git_labels: true
+#    - name: Publish to GitHub Package Registry
+#      uses: elgohr/Publish-Docker-Github-Action@master
+#      with:
+#        name: wuvt/containers/liquidsoap
+#        username: wuvt
+#        password: ${{ secrets.GITHUB_TOKEN }}
+#        registry: docker.pkg.github.com
+#        workdir: liquidsoap
