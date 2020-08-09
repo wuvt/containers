@@ -1,8 +1,8 @@
 name: Build nginx-elasticsearch Docker image and push to GitHub Package Registry
 on:
   push:
-    paths:
-      - "nginx-elasticsearch/**"
+    tags:
+      - 'nginx-elasticsearch-*'
 
 jobs:
   build:

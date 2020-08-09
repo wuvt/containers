@@ -2,7 +2,7 @@ name: Build and push liquidsoap Docker image
 on:
   push:
     tags:
-      - liquidsoap-*
+      - 'liquidsoap-*'
 
 jobs:
   build:

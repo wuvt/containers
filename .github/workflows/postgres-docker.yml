@@ -1,8 +1,8 @@
 name: Build postgres Docker image and push to GitHub Package Registry
 on:
   push:
-    paths:
-      - "postgres/**"
+    tags:
+      - 'postgres-*'
 
 jobs:
   build:

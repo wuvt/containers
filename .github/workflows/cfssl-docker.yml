@@ -1,8 +1,8 @@
 name: Build cfssl Docker image and push to GitHub Package Registry
 on:
   push:
-    paths:
-      - "cfssl/**"
+    tags:
+      - 'cfssl-*'
 
 jobs:
   build:

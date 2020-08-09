@@ -1,8 +1,8 @@
 name: Build stream-monitor Docker image and push to GitHub Package Registry
 on:
   push:
-    paths:
-      - "stream-monitor/**"
+    tags:
+      - 'stream-monitor-*'
 
 jobs:
   build:
