@@ -35,7 +35,7 @@ COPY --from=builder /home/opam/root /
 
 RUN sed -i 's/$/ non-free/' /etc/apt/sources.list \
         && apt-get update \
-        && apt-get install curl \
+        && apt-get install -y curl \
         && cat /depexts | xargs apt-get install -y --no-install-recommends \
         && rm -rf /var/lib/apt/lists/* \
         && liquidsoap --version
