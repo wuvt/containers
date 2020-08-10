@@ -9,11 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Publish to GitHub Package Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - name: Get release version
+      id: get_version
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:25})
+    - name: Build and publish Docker image
+      uses: docker/build-push-action@v1
       with:
-        name: wuvt/containers/stream-monitor
-        username: wuvt
-        password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        workdir: stream-monitor
+        repository: wuvt/stream-monitor
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: latest,${{ env.RELEASE_VERSION }}
+        path: stream-monitor
+        add_git_labels: true
+#    - name: Publish to GitHub Package Registry
+#      uses: elgohr/Publish-Docker-Github-Action@master
+#      with:
+#        name: wuvt/containers/stream-monitor
+#        username: wuvt
+#        password: ${{ secrets.GITHUB_TOKEN }}
+#        registry: docker.pkg.github.com
+#        workdir: stream-monitor
