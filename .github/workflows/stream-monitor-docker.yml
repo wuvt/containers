@@ -1,4 +1,4 @@
-name: Build stream-monitor Docker image and push to GitHub Package Registry
+name: Build and push stream-monitor Docker image
 on:
   push:
     tags:
