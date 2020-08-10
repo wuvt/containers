@@ -1,7 +1,7 @@
-FROM alpine:3.10
+FROM alpine:3.12
 LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
-ENV FETCHMAIL_VERSION 6.4.6-r1
+ENV FETCHMAIL_VERSION 6.4.5-r0
 
 RUN apk add --no-cache "fetchmail~${FETCHMAIL_VERSION}"
 
