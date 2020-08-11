@@ -2,7 +2,7 @@ FROM postgres:9.5
 LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 RUN apt-get update && apt-get -y install \
-           build-essential git libicu52 libicu-dev \
+           build-essential git libicu57 libicu-dev \
            postgresql-server-dev-$PG_MAJOR=$PG_VERSION
 
 RUN mkdir -p /usr/src/musicbrainz-unaccent \
