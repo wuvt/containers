@@ -12,7 +12,7 @@ jobs:
     - name: Get release version
       id: get_version
       run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:20})
-    - name: Build and publish Docker image
+    - name: Build and push Docker image
       uses: docker/build-push-action@v1
       with:
         repository: wuvt/fetchmail
@@ -21,11 +21,13 @@ jobs:
         tags: latest,${{ env.RELEASE_VERSION }}
         path: fetchmail
         add_git_labels: true
-#    - name: Publish to GitHub Package Registry
-#      uses: elgohr/Publish-Docker-Github-Action@master
-#      with:
-#        name: wuvt/containers/fetchmail
-#        username: wuvt
-#        password: ${{ secrets.GITHUB_TOKEN }}
-#        registry: docker.pkg.github.com
-#        workdir: fetchmail
+    - name: Build and push Docker image to GitHub Package Registry
+      uses: docker/build-push-action@v1
+      with:
+        repository: wuvt/containers/fetchmail
+        username: wuvt
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        tags: latest,${{ env.RELEASE_VERSION }}
+        path: fetchmail
+        add_git_labels: true
