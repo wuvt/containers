@@ -21,13 +21,13 @@ jobs:
         tags: latest,${{ env.RELEASE_VERSION }}
         path: etcd-backup
         add_git_labels: true
-    - name: Build and push Docker image to GitHub Package Registry
+    - name: Build and push Docker image to GitHub Container Registry
       uses: docker/build-push-action@v1
       with:
-        repository: wuvt/containers/etcd-backup
+        repository: wuvt/etcd-backup
         username: wuvt
         password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
+        registry: ghcr.io
         tags: latest,${{ env.RELEASE_VERSION }}
         path: etcd-backup
         add_git_labels: true
