@@ -1,0 +1,20 @@
+name: Build and push containers on demand
+on:
+  repository_dispatch:
+    types: [build-container]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build and push Docker image to GitHub Container Registry
+      uses: docker/build-push-action@v1
+      with:
+        repository: wuvt/${{ github.event.client_payload.container }}
+        username: wuvt
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
+        tags: latest,${{ github.event.client_payload.tag }}
+        path: ${{ github.event.client_payload.container }}
+        add_git_labels: true
