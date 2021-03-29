@@ -1,4 +1,4 @@
-FROM wuvt/liquidsoap:latest
+FROM savonet/liquidsoap:v1.4.3
 LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 USER root
