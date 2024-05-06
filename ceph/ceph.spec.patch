@@ -1,0 +1,25 @@
+diff --git a/ceph.spec b/ceph.spec
+index 6e06c08..be12d0f 100644
+--- a/ceph.spec
++++ b/ceph.spec
+@@ -1329,6 +1329,20 @@ env | sort
+ 
+ %{?!_vpath_builddir:%global _vpath_builddir %{_target_platform}}
+ 
++patch cmake/modules/BuildArrow.cmake << 'EOF'
++--- a/cmake/modules/BuildArrow.cmake
+++++ b/cmake/modules/BuildArrow.cmake
++@@ -4,6 +4,9 @@ function(build_arrow)
++   # only enable the parquet component
++   set(arrow_CMAKE_ARGS -DARROW_PARQUET=ON)
++
+++  # build with the minimum SIMD level set to none
+++  list(APPEND arrow_CMAKE_ARGS -DARROW_SIMD_LEVEL=NONE)
+++
++   # only use preinstalled dependencies for arrow, don't fetch/build any
++   list(APPEND arrow_CMAKE_ARGS -DARROW_DEPENDENCY_SOURCE=SYSTEM)
++EOF
++
+ # TODO: drop this step once we can use `cmake -B`
+ mkdir -p %{_vpath_builddir}
+ pushd %{_vpath_builddir}
