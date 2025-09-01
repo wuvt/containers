@@ -1,5 +1,5 @@
 FROM ubuntu:24.04
-LABEL maintainer="WUVT IT"
+LABEL maintainer "WUVT IT <it+dockerfiles@wuvt.vt.edu>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
