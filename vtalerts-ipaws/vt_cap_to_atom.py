@@ -94,6 +94,10 @@ class IPAWSHandler(BaseHTTPRequestHandler):
             atom_feed = fetch_and_translate_feed(self.headers['Host'], feed=self.path.endswith("feed"))
             if atom_feed:
                 self.wfile.write(atom_feed.encode('utf-8'))
+        else:
+            self.send_response(301)
+            self.send_header("Location", "/IPAWSOPEN_EAS_SERVICE/rest/update")
+            self.end_headers()
 
 server_address = (SERVER_HOST, SERVER_PORT)
 httpd = HTTPServer(server_address, IPAWSHandler)
