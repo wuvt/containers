@@ -19,4 +19,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
         tags: "latest,${{ env.RELEASE_VERSION }}"
-	workdir: infra-deployer
+        workdir: infra-deployer
