@@ -1,0 +1,21 @@
+name: Build and push container image with version tag and latest
+on:
+  push:
+    tags:
+      - 'infra-deployer-*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+    - name: Get release version
+      run: echo RELEASE_VERSION=$(echo ${GITHUB_REF:25}) >> $GITHUB_ENV
+    - name: Build and push Docker image to GitHub Package Registry
+      uses: elgohr/Publish-Docker-Github-Action@v5
+      with:
+        name: wuvt/infra-deployer
+        username: wuvt
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
+        tags: "latest,${{ $RELEASE_VERSION }}"
