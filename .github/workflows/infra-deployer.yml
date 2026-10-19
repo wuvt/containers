@@ -18,4 +18,4 @@ jobs:
         username: wuvt
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
-        tags: "latest,${{ RELEASE_VERSION }}"
+        tags: "latest,${{ env.RELEASE_VERSION }}"
